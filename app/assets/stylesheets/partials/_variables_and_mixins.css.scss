@@ -1,0 +1,14 @@
+/* Variables */
+
+$blue: #437ED4;
+$dark-blue: #385ba6;
+$light-grey: #dedede;
+$orange: #cf6d35;
+
+/* Mixins */
+
+@mixin border-radius {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}

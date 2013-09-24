@@ -1,0 +1,5 @@
+.nav
+  %ul
+    %li= link_to 'Home', root_path, class: "#{'active' if controller_name == 'pages'}"
+    %li= link_to 'Software', software_path, class: "#{'active' if controller_name == 'pages' && controller.action_name == 'software'}"
+    %li= link_to  'Photography', photos_path, class: "#{'active' if controller_name == 'photos'}"
