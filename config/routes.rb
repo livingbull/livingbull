@@ -6,6 +6,6 @@ Livingbull::Application.routes.draw do
 
   root :to => 'pages#index'
 
-  match '/software' => 'pages#software'
+  get '/software' => 'pages#software'
 
 end
