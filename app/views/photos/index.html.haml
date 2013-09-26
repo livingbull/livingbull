@@ -1,9 +1,22 @@
-%h1 Photography
+.container
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Content
+        %th Description
+        %th
+        %th
+        %th
+    %tbody
+      - @photos.each do |photo|
+        %tr
+          %td= photo.title
+          %td= photo.photo_file_name
+          %td= photo.description
+          %td= link_to 'Show', photo
+          %td= link_to 'Edit', edit_photo_path(photo)
+          %td= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' }
 
-.photo-content
-  %section I've always had a love for capturing brief, static moments in time. Looking back on images from various adventures, whether a mile away or in some remote part of the outdoors, is a favorite activity of mine. It never gets old. Here is my current portfolio:
-  .button= link_to 'Mike Bull Images', 'http://www.mikebullimages.com'
-
-.sidebar
-  =image_tag 'gallery/P1010026_650x433_Web.jpg'
-
+  %br
+  = link_to 'New Photo', new_photo_path

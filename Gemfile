@@ -16,6 +16,9 @@ gem 'jquery-rails'
 gem 'therubyracer'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 
+gem 'paperclip', '~> 3.0'
+gem 'devise', '~> 3.0.0.rc'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
