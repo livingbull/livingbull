@@ -10,7 +10,7 @@
 
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
-        %li= link_to 'Home', root_path    #, class: "#{'active' if controller_name == 'pages'}"
+        %li= link_to raw("<i class='icon-home'></i> Home"), root_path    #, class: "#{'active' if controller_name == 'pages'}"
         %li= link_to 'Software', software_path    #, class: "#{'active' if controller_name == 'pages' && controller.action_name == 'software'}"
         %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}

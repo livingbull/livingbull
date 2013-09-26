@@ -4,37 +4,38 @@
     %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
     %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
     %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "3", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "4", "data-target" => "#myCarousel"}
 
   .carousel-inner
     .item.active
-      -#= image_tag 'gallery/DSC_0120_970x388_web.jpg'
-      -#= image_tag 'gallery/_DSC0060_970x388_web.jpg'
       = image_tag 'gallery/_DSC0471_970x388_web.jpg'
     .item
       = image_tag 'gallery/_DSC0060_970x388_web.jpg'
     .item
-      = image_tag 'gallery/_DSC0471_970x388_web.jpg'
+      = image_tag 'gallery/_DSC0046_970x388_web.jpg'
+    .item
+      = image_tag 'gallery/DSC_0120_970x388_web.jpg'
+    .item
+      = image_tag 'gallery/DSC_0209_970x388_web.jpg'
 
   %a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel"}
     %span.glyphicon.glyphicon-chevron-left
   %a.right.carousel-control{"data-slide" => "next", href: "#myCarousel"}
     %span.glyphicon.glyphicon-chevron-right
 
+.container.marketing
+  .row
+    .col-lg-6
+      /%img.img-circle{alt: "Generic placeholder image", "data-src" => "holder.js/140x140", src: "data:image/png;base64,"}/
+      %h2 Software Development
+      %p I enjoy creating highly usable and visually appealing software through a wide variety of technologies, with a focus on ruby and rails, haml, scss, and coffeescript.
+      %p
+        %a.btn.btn-large.btn-primary{href: software_path} View details »
 
-//TODO: need to add another container to center.
-.container
-  .container.marketing
-    .row
-      .col-lg-6
-        /%img.img-circle{alt: "Generic placeholder image", "data-src" => "holder.js/140x140", src: "data:image/png;base64,"}/
-        %h2 Software Development
-        %p I enjoy creating highly usable and visually appealing software through a wide variety of technologies, with a focus on ruby and rails, haml, scss, and coffeescript.
-        %p
-          %a.btn.btn-large.btn-primary{href: software_path} View details »
-
-      .col-lg-6
-        -#%img.img-circle{alt: "Generic placeholder image", "data-src" => "holder.js/140x140", src: "data:image/png;base64,"}/
-        %h2 Photography
-        %p I have a passion for the outdoors, especially the mountains. It's where I feel at home. Photography allows me to document, in brief captures of time, how I see this world of ours.
-        %p
-          %a.btn.btn-large.btn-primary{href: photos_path} View details »
+    .col-lg-6
+      -#%img.img-circle{alt: "Generic placeholder image", "data-src" => "holder.js/140x140", src: "data:image/png;base64,"}/
+      %h2 Photography
+      %p I have a passion for the outdoors, especially the mountains. It's where I feel at home. Photography allows me to document, in brief captures of time, how I see this world of ours.
+      %p
+        %a.btn.btn-large.btn-primary{href: photos_path} View details »
