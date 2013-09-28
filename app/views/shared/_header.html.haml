@@ -10,16 +10,30 @@
 
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
-        %li= link_to raw("<i class='icon-home'></i> Home"), root_path    #, class: "#{'active' if controller_name == 'pages'}"
-        %li= link_to 'Software', software_path    #, class: "#{'active' if controller_name == 'pages' && controller.action_name == 'software'}"
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-            Photography
-            %b.caret
-          %ul.dropdown-menu
-            %li
-              %a{href: gallery_path} Photo Gallery
-            %li
-              %a{href: photos_path} Manage Photos
+        %li= link_to raw("<i class='icon-home'></i> Home"), root_path
+        %li= link_to 'Software', software_path
 
-        %li= link_to 'Users', users_path
+        - if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Photography
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{href: gallery_path} Photo Gallery
+              %li
+                %a{href: photos_path} Manage Photos
+        - else
+          %li= link_to 'Photography', gallery_path
+
+        -if user_signed_in?
+          %li= link_to 'Users', users_path
+
+        - if user_signed_in?
+          %li.edit= link_to 'Profile', edit_user_registration_path
+        -else
+          %li.signup= link_to 'Sign Up', new_user_registration_path
+        - if user_signed_in?
+          %li.logout= link_to 'Logout', destroy_user_session_path, method: :delete
+        - else
+          %li.login= link_to 'Login', new_user_session_path

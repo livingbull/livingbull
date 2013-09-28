@@ -1,16 +1,18 @@
 !!!
 %html
   %head
-    %title Mike Bull, ruby on rails software developer in Bend, OR
+    %title Mike Bull, Ruby on Rails software developer in Bend, OR
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     = render partial: 'shared/header'
+
     .container
+      = render partial: 'layouts/messages'
       = yield
 
-      /TODO: will update this
+      /TODO: will update this for footer
       %br
       %br
       %br

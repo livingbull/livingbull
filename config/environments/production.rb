@@ -18,7 +18,10 @@ Livingbull::Application.configure do
   config.assets.compile = false
 
   # Generate digests for assets URLs
-  config.assets.digest = true
+  config.assets.digest =
+
+  # TODO: update when pushing app to prod
+  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
