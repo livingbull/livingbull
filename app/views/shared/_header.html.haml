@@ -13,26 +13,32 @@
         %li= link_to raw("<i class='icon-home'></i> Home"), root_path
         %li= link_to 'Software', software_path
 
+        %li= link_to 'Photography', gallery_path
+
         - if user_signed_in?
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              Photography
+              Admin
               %b.caret
             %ul.dropdown-menu
               %li
-                %a{href: gallery_path} Photo Gallery
-              %li
                 %a{href: photos_path} Manage Photos
-        - else
-          %li= link_to 'Photography', gallery_path
+              %li
+                %a{href: users_path} Manage Users
+              %li.edit= link_to 'Profile', edit_user_registration_path
 
-        -if user_signed_in?
-          %li= link_to 'Users', users_path
+        //Updated to icons when icons are working
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            Contact
+            %b.caret
+          %ul.dropdown-menu
+            %li= link_to raw("<i class='icon-twitter'></i> Twitter"), 'https://twitter.com/livingbull', target: :blank
+            %li= link_to raw("<i class='icon-linkedin'></i> Linked In"), 'http://www.linkedin.com/pub/mike-bull/5/9a0/9bb', target: :blank
 
-        - if user_signed_in?
-          %li.edit= link_to 'Profile', edit_user_registration_path
-        -else
+        - unless user_signed_in?
           %li.signup= link_to 'Sign Up', new_user_registration_path
+
         - if user_signed_in?
           %li.logout= link_to 'Logout', destroy_user_session_path, method: :delete
         - else
