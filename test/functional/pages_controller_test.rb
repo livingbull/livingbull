@@ -1,9 +1,15 @@
 require 'test_helper'
 
 class PagesControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :gallery
-    assert_response :success
+
+  test "gets index" do
+    get :index
+    assert :success
+  end
+
+  test "gets software" do
+    get :software
+    assert :success
   end
 
 end

@@ -1,9 +1,15 @@
 require 'test_helper'
 
 class PhotosControllerTest < ActionController::TestCase
-  test "should get index" do
+
+  test "gets index" do
+    get :index
+    assert :success
+  end
+
+  test "gets gallery" do
     get :gallery
-    assert_response :success
+    assert :success
   end
 
 end
