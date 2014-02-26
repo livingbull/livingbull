@@ -23,4 +23,6 @@ gem 'lunchy'
 
 gem 'bcrypt'
 
+gem 'rails_12factor', group: :production
+
 gem 'debugger'
