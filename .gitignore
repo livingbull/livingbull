@@ -12,3 +12,5 @@
 /tmp
 
 .idea/*
+.env
+Procfile

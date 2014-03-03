@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new
+    @photo = Photo.new(params[:photo])
 
     if @photo.save
       redirect_to @photo, notice: 'Photo was successfully added.'

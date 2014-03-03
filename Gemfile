@@ -17,15 +17,16 @@ gem 'therubyracer'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 
 gem 'paperclip', '~> 3.0'
-gem 'devise', '~> 3.0.0.rc'
+gem 'devise'
 gem 'lunchy'
-#gem 'actionmailer', '~> 4.0.0'
+gem 'actionmailer', '~> 4.0.3'
 
 gem 'bcrypt'
 
-group :development do
+group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'foreman'
 end
 
 group :production do

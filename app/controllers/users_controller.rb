@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #before_filter :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,11 +18,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      UserMailer.signup_confirmation(@user).deliver   #deliver_signup_confirmation(user)
+      redirect_to @user, notice: 'Signed up successfully.'
     else
-      render action: 'new'
+      render :new
     end
   end
 
@@ -30,11 +31,10 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
-      render action: 'edit'
+      render :edit
     end
   end
 
-  # DELETE /users/1
   def destroy
     @user.destroy
     redirect_to users_url, notice: 'User was successfully destroyed.'

@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    = yield :head
+  %body
+    = yield
+
+    - unless @footer.blank?
+      %hr
+      = @footer.html_safe?

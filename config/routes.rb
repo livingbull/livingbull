@@ -1,11 +1,11 @@
 Livingbull::Application.routes.draw do
 
   devise_for :users
-  #resources :users
+  resources :users
 
-  get "pages/index"
+  get 'pages/index'
 
-  #resources :photos
+  resources :photos
 
   root :to => 'pages#index'
 
