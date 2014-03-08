@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
     %title Mike Bull, Ruby on Rails software developer in Bend, OR
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
@@ -8,14 +9,9 @@
   %body
     = render partial: 'shared/header'
 
-    .container
-      = render partial: 'layouts/messages'
-      = yield
+    #wrap
+      .container
+        = render partial: 'layouts/messages'
+        = yield
 
-      /TODO: will update this for footer
-      %br
-      %br
-      %br
-      %br
-      %br
-      = render partial: 'shared/footer'
+    = render partial: 'shared/footer'

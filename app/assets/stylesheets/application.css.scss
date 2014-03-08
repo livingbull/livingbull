@@ -3,59 +3,46 @@
 @import "partials/header.css.scss";
 @import "bootstrap_overrides.css.scss";
 
-body {
+.container {
+  max-width: 970px;
+}
+
+html, body {
+  height: 100%;
   font-family: "Helvetica Neue" !important;
 }
 
-.container {
-  max-width: 970px;
-  //margin: 0 auto;
-  //background: #fff;
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px;
 }
 
+h1 {
+  font-size: 1.9em;
+}
 
-//h1 {
-//  font-weight: normal;
-//  color: $orange;
-//  font-size: 1.4em;
-//}
-//
-//.two-boxes {
-//  margin-top: 25px;
-//
-//  .software, .photography {
-//    width: 49%;
-//    display: inline;
-//    float: left;
-//
-//    .title {
-//      font-size: 1.3em;
-//      margin-bottom: 7px;
-//      a {
-//        color: $orange;
-//        text-decoration: none;
-//        //&:hover {color: $blue;}
-//      }
-//    }
-//    .content {
-//    }
-//  }
-//  .photography {
-//    float: right;
-//  }
-//}
-//
-//.footer {
-//  margin-top: 200px;
-//  padding-top: 15px;
-//  border-top: 1px solid lightgray;
-//  font-size: .95em;
-//  color: grey;
-//  a {
-//    text-decoration: none;
-//    color: $dark-blue;
-//  }
-//}
-//
-//
-//
+h2 {
+  font-size: 1.7em;
+}
+
+#push, #footer {
+  height: 40px;
+}
+
+#footer {
+  background-color: #f5f5f5;
+  padding-top: 10px;
+}
+
+/* Responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 45px;
+  }
+}
