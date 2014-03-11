@@ -3,18 +3,20 @@
   %table.table.table-striped
     %thead
       %tr
+        %th
         %th Title
-        %th Content
         %th Description
+        %th File Name
         %th
         %th
         %th
     %tbody
       - @photos.each do |photo|
         %tr
+          %td= image_tag photo.photo.url
           %td= photo.title
-          %td= photo.photo_file_name
           %td= photo.description
+          %td= photo.photo_file_name
           %td= link_to 'Show', photo
           %td= link_to 'Edit', edit_photo_path(photo)
           %td= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' }

@@ -6,9 +6,6 @@ Livingbull::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  # Log error messages when you accidentally call methods on nil.
-  config.whiny_nils = false
-
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -29,13 +26,13 @@ Livingbull::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  config.eager_load = false
+
   # Do not compress assets
   config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
-  Paperclip.options[:command_path] = "/usr/local/bin/"
 
   #Default URL options
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }

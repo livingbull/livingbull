@@ -1,15 +1,15 @@
 Livingbull::Application.routes.draw do
 
   devise_for :users
-  #resources :users
-
-  get "pages/index"
-
-  #resources :photos
+  resources :users
 
   root :to => 'pages#index'
+  match 'pages/index', via: :get
 
-  get '/software' => 'pages#software'
-  get '/gallery' => 'photos#gallery'
+  resources :photos
+  match '/gallery' => 'photos#gallery', via: :get
+  match '/national_parks' => 'photos#national_parks', via: :get
+
+  match '/software' => 'pages#software', via: :get
 
 end
