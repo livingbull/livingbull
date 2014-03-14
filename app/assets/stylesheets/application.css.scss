@@ -1,7 +1,13 @@
+/*
+ *= require_self
+ *= require fancybox
+ *= require_tree .
+ */
+
 @import "twitter/bootstrap";
 @import "partials/variables_and_mixins.css.scss";
 @import "partials/header.css.scss";
-@import "bootstrap_overrides.css.scss";
+@import "photos.css.scss";
 
 .container {
   max-width: 970px;
@@ -20,11 +26,11 @@ html, body {
 }
 
 h1 {
-  font-size: 1.9em;
+  font-size: 1.9em !important;
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 1.7em !important;
 }
 
 #push, #footer {
@@ -34,9 +40,10 @@ h2 {
 #footer {
   background-color: #f5f5f5;
   padding-top: 10px;
+  margin-top: 50px;
 }
 
-/* Responsive CSS fixes as necessary */
+/* Responsive CSS fixes */
 @media (max-width: 767px) {
   #footer {
     margin-left: -20px;

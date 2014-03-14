@@ -1,11 +1,13 @@
 .container
   %h1 Photos
+  = link_to 'New Photo', new_photo_path
   %table.table.table-striped
     %thead
       %tr
         %th
         %th Title
         %th Description
+        %th Group
         %th File Name
         %th
         %th
@@ -13,9 +15,10 @@
     %tbody
       - @photos.each do |photo|
         %tr
-          %td= image_tag photo.photo.url
+          %td= image_tag photo.photo.url(:thumb)
           %td= photo.title
           %td= photo.description
+          %td= readable_enum(Photo::PHOTO_GROUPS, photo.photo_group)
           %td= photo.photo_file_name
           %td= link_to 'Show', photo
           %td= link_to 'Edit', edit_photo_path(photo)

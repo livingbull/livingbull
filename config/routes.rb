@@ -7,8 +7,7 @@ Livingbull::Application.routes.draw do
   match 'pages/index', via: :get
 
   resources :photos
-  match '/gallery' => 'photos#gallery', via: :get
-  match '/national_parks' => 'photos#national_parks', via: :get
+  match '/photo_gallery' => 'photos#photo_gallery', via: :get
 
   match '/software' => 'pages#software', via: :get
 

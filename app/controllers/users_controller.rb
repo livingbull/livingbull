@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
@@ -34,7 +35,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
   def destroy
     @user.destroy
     redirect_to users_url, notice: 'User was successfully destroyed.'

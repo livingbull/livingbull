@@ -7,8 +7,8 @@ class PhotosControllerTest < ActionController::TestCase
     assert :success
   end
 
-  test "gets gallery" do
-    get :gallery
+  test "gets photo gallery" do
+    get :photo_gallery
     assert :success
   end
 

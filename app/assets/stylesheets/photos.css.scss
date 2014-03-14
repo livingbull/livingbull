@@ -1,3 +1,27 @@
-// Place all the styles related to the Photos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.group-links {
+  ul {
+    list-style-type: none;
+    margin: 5px 0 12px 0;
+    li {
+      display: inline;
+      margin: 0 15px;
+      a {
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+#photo-gallery {
+  img {
+    margin: 10px;
+  }
+}
+
+/* Responsive CSS fixes for gallery thumbnails */
+@media (max-width: 767px) {
+  #photo-gallery img {
+
+  }
+}

@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.0.1'
 gem 'uglifier', '>= 2.2.1'
 
 gem 'jquery-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
 gem 'therubyracer'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
 
