@@ -15,7 +15,9 @@
     %tbody
       - @photos.each do |photo|
         %tr
-          %td= image_tag photo.photo.url(:thumb)
+          %td
+            = link_to photo.photo.url, class: 'fancybox', caption: photo.title do
+              = image_tag photo.photo.url(:thumb)
           %td= photo.title
           %td= photo.description
           %td= readable_enum(Photo::PHOTO_GROUPS, photo.photo_group)
