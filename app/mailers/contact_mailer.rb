@@ -1,6 +1,8 @@
 class ContactMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: ''
 
+  def send_mail
 
-
+    mail to: '', subject: 'Contact from Living Bull'
+  end
 end

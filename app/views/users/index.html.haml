@@ -1,10 +1,16 @@
 %h1 Users
+
+= link_to 'All Users', :action => 'index'
+|
+= link_to 'Users awaiting approval', :action => 'index', :approved => 'false'
+
 %table.table.table-striped
   %thead
     %tr
       %th First name
       %th Last name
       %th Email
+      %th Approved?
       %th
       %th
       %th
@@ -14,6 +20,7 @@
         %td= user.first_name
         %td= user.last_name
         %td= user.email
+        %td= user.approved ? 'Yes' : 'No'
         %td= link_to 'Show', user
         %td= link_to 'Edit', edit_user_path(user)
         %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }

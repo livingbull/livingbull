@@ -2,7 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.all
+    #@users = User.all
+    if params[:approved] == 'false'
+      @users = User.find_all_by_approved(false)
+    else
+      @users = User.all
+    end
   end
 
   def show
@@ -48,6 +53,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email)
+      params.require(:user).permit(:first_name, :last_name, :email, :approved)
     end
 end
