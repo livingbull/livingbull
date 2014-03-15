@@ -64,6 +64,7 @@ class PhotosController < ApplicationController
       else
         @photos = Photo.all
     end
+    #TODO: add logic for group link active states.
   end
 
 

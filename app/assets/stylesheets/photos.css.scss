@@ -1,27 +1,37 @@
+@import "partials/variables_and_mixins";
+
 .group-links {
   ul {
     list-style-type: none;
-    margin: 5px 0 12px 0;
+    margin: 5px 0 10px 0;
+    padding-left: 5px;
     li {
       display: inline;
-      margin: 0 15px;
+      margin: 0 8px;
       a {
         text-decoration: none;
         font-size: 1.2em;
+        &:hover { color: $dark-blue; }
       }
+      .active { color: $dark-blue; }
     }
   }
 }
 
 #photo-gallery {
   img {
-    margin: 10px;
+    margin: 8px;
   }
 }
 
 /* Responsive CSS fixes for gallery thumbnails */
 @media (max-width: 767px) {
-  #photo-gallery img {
-
+  #photo-gallery {
+    padding-left: 35px;
+  }
+  .group-links {
+    font-size: .85em;
+    text-align: center;
+    ul { margin-left: -8px; }
   }
 }
