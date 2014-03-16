@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
-    @photos = Photo.all
+    @photos = Photo.paginate page: params[:page] || 1, per_page: params[:per_page] || 20
   end
 
   def show
