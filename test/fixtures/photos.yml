@@ -1,7 +1,9 @@
 one:
-  title: "Photo 1"
-  description: "This is where I took Photo 1."
+  title: Photo 1
+  description: This is where I took Photo 1.
+  photo_group: 1
 
 two:
-  title: "Photo 2"
-  description: "This is where I took Photo 2."
+  title: Photo 2
+  description: This is where I took Photo 2.
+  photo_group: 2
