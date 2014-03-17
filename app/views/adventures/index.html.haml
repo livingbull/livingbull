@@ -1,0 +1,29 @@
+.container
+  %h1 Adventures
+  = link_to 'New Adventure', new_adventure_path
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Adventure
+        %th Location
+        %th Type
+        %th Date
+        %th Comments
+        %th
+        %th
+        %th
+    %tbody
+      - @adventures.each do |adventure|
+        %tr
+          %td= adventure.name
+          %td= adventure.location
+          %td= readable_enum(Adventure::ADVENTURE_TYPES, adventure.adventure_type)
+          %td= adventure.adventure_date
+          %td= adventure.comments
+          %td= link_to 'Show', adventure
+          %td= link_to 'Edit', edit_adventure_path(adventure)
+          %td= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' }
+
+  .pagination= will_paginate @adventures, renderer: BootstrapPagination::Rails
+  %br
+  = link_to 'New Adventure', new_adventure_path

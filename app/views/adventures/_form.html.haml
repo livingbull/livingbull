@@ -1,0 +1,36 @@
+= form_for @adventure, html: { multipart: true } do |f|
+  - if @adventure.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@adventure.errors.count, "error")
+        prohibited this adventure from being saved:
+      %ul
+        - @adventure.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name, 'Adventure Name'
+    %br
+    = f.text_field :name
+  .field
+    = f.label :location, 'Location'
+    %br
+    = f.text_field :location
+  .field
+    = f.label :adventure_type, 'Type'
+    %br
+    = f.select :adventure_type, options_for_select_enum(Adventure::ADVENTURE_TYPES, @adventure.adventure_type), include_blank: true
+  .field
+    = f.label :date, 'Date'
+    %br
+    = f.date_select :adventure_date
+  .field
+    = f.label :comments, 'Comments about adventure'
+    %br
+    = f.text_area :comments, size: '30x7'
+  .field
+    = f.label :photo, 'Choose Photo'
+    %br
+    = f.file_field :photo
+  %br
+  .actions
+    = f.submit   #%button.btn.btn-large.btn-primary

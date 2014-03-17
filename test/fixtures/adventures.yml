@@ -1,0 +1,13 @@
+one:
+  name: Birthday Camp
+  location: East Lake, OR
+  adventure_type: 0
+  adventure_date: 2014-03-15
+  comments: Great time!
+
+two:
+  name: River Trail Hike
+  location: Bend, OR
+  adventure_type: 1
+  adventure_date: 2014-03-20
+  comments: Nice 4 mile hike on the river today.

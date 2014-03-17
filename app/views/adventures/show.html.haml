@@ -1,0 +1,23 @@
+= link_to 'Edit', edit_adventure_path(@adventure)
+|
+= link_to 'Adventure Index', adventures_path
+
+%p
+  %strong Adventure Name:
+  = @adventure.name
+%p
+  %strong Location:
+  = @adventure.location
+%p
+  %strong Adventure Type
+  = readable_enum(Adventure::ADVENTURE_TYPES, @adventure.adventure_type)
+%p
+  %strong Date:
+  = @adventure.adventure_date
+%p
+  %strong Comments:
+  = @adventure.comments
+
+= link_to 'Edit', edit_adventure_path(@adventure)
+|
+= link_to 'Adventure Index', adventures_path
