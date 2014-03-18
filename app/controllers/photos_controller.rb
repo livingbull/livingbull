@@ -46,25 +46,11 @@ class PhotosController < ApplicationController
 
   def photo_gallery
     group = params[:photo_group]
-    case group
-      when '0'
-        @photos = Photo.where(photo_group: 0)
-      when '1'
-        @photos = Photo.where(photo_group: 1)
-      when '2'
-        @photos = Photo.where(photo_group: 2)
-      when '3'
-        @photos = Photo.where(photo_group: 3)
-      when '4'
-        @photos = Photo.where(photo_group: 4)
-      when '5'
-        @photos = Photo.where(photo_group: 5)
-      when '6'
-        @photos = Photo.where(photo_group: 6)
-      else
-        @photos = Photo.all
+    if group
+      @photos = Photo.where(photo_group: group)
+    else
+      @photos = Photo.all
     end
-    #TODO: add logic for group link active states.
   end
 
 
