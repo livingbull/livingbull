@@ -1,5 +1,4 @@
 == Welcome to Living Bull
 
-Welcome to Living Bull, Mike Bull on the internet.  This is a basic site and I'll be bringing in
-and building my photography portfolio site here as well, with authentication, photo uploading, photo galleries,
-etc.
+Welcome to Living Bull, Mike Bull on the internet.  This is my personal site where I host my photography portfolio,
+describe a little about me as a software developer, and a provide a basic adventure tracker for my kids.
