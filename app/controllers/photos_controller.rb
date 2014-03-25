@@ -1,5 +1,7 @@
 class PhotosController < ApplicationController
 
+  before_filter :deny_visitors
+
   def index
     @photos = Photo.paginate page: params[:page] || 1, per_page: params[:per_page] || 20
   end

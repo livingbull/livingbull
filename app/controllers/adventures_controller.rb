@@ -1,5 +1,7 @@
 class AdventuresController < ApplicationController
 
+  before_filter :deny_visitors
+
   def index
     @adventures = Adventure.paginate page: params[:page] || 1, per_page: params[:per_page] || 20
   end
