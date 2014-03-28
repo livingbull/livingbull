@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 
-  before_filter :deny_visitors
+  before_filter :deny_visitors, except: :photo_gallery
 
   def index
     @photos = Photo.paginate page: params[:page] || 1, per_page: params[:per_page] || 20
@@ -41,9 +41,6 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     redirect_to photos_url, notice: 'Photo was successfully deleted.'
-  end
-
-  def mike_bull_images
   end
 
   def photo_gallery
